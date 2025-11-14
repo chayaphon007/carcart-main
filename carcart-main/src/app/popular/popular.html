@@ -1,0 +1,279 @@
+<!-- Most Popular Car Rental Deals Section -->
+<section class="bg-neutral-100 py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-4">Most popular car rental deals</h2>
+    <p class="text-center text-gray-600 mb-12">
+      A high-performing web-based car rental system for any rent-a-car company and website
+    </p>
+
+    <!-- Tabs -->
+    <div class="flex border-b border-gray-300 mb-8 overflow-x-auto">
+      <button class="px-6 py-3 text-lg font-semibold text-gray-900 border-b-2 border-gray-900">
+        Popular
+      </button>
+      <button class="px-6 py-3 text-lg font-semibold text-gray-500 hover:text-gray-900">
+        Large Car
+      </button>
+      <button class="px-6 py-3 text-lg font-semibold text-gray-500 hover:text-gray-900">
+        Small Car
+      </button>
+      <button class="px-6 py-3 text-lg font-semibold text-gray-500 hover:text-gray-900">
+        Exclusive Car
+      </button>
+    </div>
+
+    <!-- Cars Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <ng-container>
+        <!-- Car Card Template -->
+        <div *ngFor=" let data  of data_new" class="bg-neutral-300 rounded-lg p-6 flex flex-col">
+          <div *ngIf="data?.img" class="flex items-center justify-between mb-4">
+            <h3 class="font-semibold text-gray-900">{{data.price}} {{data.name}} </h3>
+            <!-- <img [src]="data.img" alt=""> -->
+            <!-- <svg class="w-6 h-6 text-gray-600 cursor-pointer hover:text-red-500" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg> -->
+          </div>
+
+          <div class="flex-grow flex items-center justify-center mb-6">
+            <img [src]="data.img" alt="">
+
+          </div>
+          <button (click)="onButtonClick()" class="px-4 py-2 bg-white text-gray-900 rounded hover:bg -gray-50">
+            Rent Now
+          </button>
+        </div>
+        <!-- <div class="flex items-center justify-between">
+            <span class="text-lg font-bold text-gray-900">$72.00<span class="text-sm text-gray-600">/day</span></span> -->
+
+        <!-- </div> -->
+
+      </ng-container>
+
+      <!-- Car Card 1 -->
+      <!-- <div class="bg-neutral-300 rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-semibold text-gray-900">All New Rush</h3>
+          <svg class="w-6 h-6 text-gray-600 cursor-pointer hover:text-red-500" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+
+        <div class="flex-grow flex items-center justify-center mb-6">
+          <svg class="w-16 h-16 text-gray-500" viewBox="0 0 24 24" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+          </svg>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-gray-900">$72.00<span class="text-sm text-gray-600">/day</span></span>
+          <button (click)="onButtonClick()" class="px-4 py-2 bg-white text-gray-900  rounded hover:bg-gray-50">
+            Rent Now
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Car Card 2 -->
+      <!-- <div class="bg-neutral-300 rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-semibold text-gray-900">All New Rush</h3>
+          <svg class="w-6 h-6 text-gray-600 cursor-pointer hover:text-red-500" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+
+        <div class="flex-grow flex items-center justify-center mb-6">
+          <svg class="w-16 h-16 text-gray-500" viewBox="0 0 24 24" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+          </svg>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-gray-900">$72.00<span class="text-sm text-gray-600">/day</span></span>
+          <button (click)="onButtonClick()" class="px-4 py-2 bg-white text-gray-900  rounded hover:bg-gray-50">
+            Rent Now
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Car Card 3 -->
+      <!-- <div class="bg-neutral-300 rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-semibold text-gray-900">All New Rush</h3>
+          <svg class="w-6 h-6 text-gray-600 cursor-pointer hover:text-red-500" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+
+        <div class="flex-grow flex items-center justify-center mb-6">
+          <svg class="w-16 h-16 text-gray-500" viewBox="0 0 24 24" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+          </svg>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-gray-900">$72.00<span class="text-sm text-gray-600">/day</span></span>
+          <button (click)="onButtonClick()" class="px-4 py-2 bg-white text-gray-900  rounded hover:bg-gray-50">
+            Rent Now
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Car Card 4 -->
+      <!-- <div class="bg-neutral-300 rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-semibold text-gray-900">All New Rush</h3>
+          <svg class="w-6 h-6 text-gray-600 cursor-pointer hover:text-red-500" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+
+        <div class="flex-grow flex items-center justify-center mb-6">
+          <svg class="w-16 h-16 text-gray-500" viewBox="0 0 24 24" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+          </svg>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-gray-900">$72.00<span class="text-sm text-gray-600">/day</span></span>
+          <button (click)="onButtonClick()" class="px-4 py-2 bg-white text-gray-900  rounded hover:bg-gray-50">
+            Rent Now
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Car Card 5 -->
+      <!-- <div class="bg-neutral-300 rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-semibold text-gray-900">All New Rush</h3>
+          <svg class="w-6 h-6 text-gray-600 cursor-pointer hover:text-red-500" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+
+        <div class="flex-grow flex items-center justify-center mb-6">
+          <svg class="w-16 h-16 text-gray-500" viewBox="0 0 24 24" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+          </svg>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-gray-900">$72.00<span class="text-sm text-gray-600">/day</span></span>
+          <button (click)="onButtonClick()" class="px-4 py-2 bg-white text-gray-900  rounded hover:bg-gray-50">
+            Rent Now
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Car Card 6 -->
+      <!-- <div class="bg-neutral-300 rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-semibold text-gray-900">All New Rush</h3>
+          <svg class="w-6 h-6 text-gray-600 cursor-pointer hover:text-red-500" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+
+        <div class="flex-grow flex items-center justify-center mb-6">
+          <svg class="w-16 h-16 text-gray-500" viewBox="0 0 24 24" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+          </svg>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-gray-900">$72.00<span class="text-sm text-gray-600">/day</span></span>
+          <button (click)="onButtonClick()" class="px-4 py-2 bg-white text-gray-900  rounded hover:bg-gray-50">
+            Rent Now
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Car Card 7 -->
+      <!-- <div class="bg-neutral-300 rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-semibold text-gray-900">All New Rush</h3>
+          <svg class="w-6 h-6 text-gray-600 cursor-pointer hover:text-red-500" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+
+        <div class="flex-grow flex items-center justify-center mb-6">
+          <svg class="w-16 h-16 text-gray-500" viewBox="0 0 24 24" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+          </svg>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-gray-900">$72.00<span class="text-sm text-gray-600">/day</span></span>
+          <button (click)="onButtonClick()" class="px-4 py-2 bg-white text-gray-900 rounded hover:bg-gray-50">
+            Rent Now
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Car Card 8 -->
+      <!-- <div class="bg-neutral-300 rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-semibold text-gray-900">All New Rush</h3>
+          <svg class="w-6 h-6 text-gray-600 cursor-pointer hover:text-red-500" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+
+        <div class="flex-grow flex items-center justify-center mb-6">
+          <svg class="w-16 h-16 text-gray-500" viewBox="0 0 24 24" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+          </svg>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-gray-900">$72.00<span class="text-sm text-gray-600">/day</span></span>
+          <button (click)="onButtonClick()" class="px-4 py-2 bg-white text-gray-900 rounded hover:bg-gray-50">
+            Rent Now
+          </button>
+        </div>
+       </div>
+    </div>-->
+    </div>
+
+    <!-- Footer Links -->
+    <div class="flex items-center justify-between">
+      <a href="#" class="text-gray-600 font-semibold hover:text-gray-900">Show more car</a>
+      <span class="text-gray-600 font-semibold">120 Car</span>
+    </div>
+  </div>
+</section>
